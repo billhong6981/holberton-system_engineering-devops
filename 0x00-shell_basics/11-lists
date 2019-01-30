@@ -1,0 +1,10 @@
+#!/bin/bash
+pwd
+ls -a
+cd ..
+pwd
+ls -a
+cd /boot
+pwd
+ls -a
+
