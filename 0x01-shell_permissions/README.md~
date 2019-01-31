@@ -1,0 +1,5 @@
+#holberton-system_engineering-devops \
+#Project:0x01-shell_permissions \
+
+Task 1 : 0-iam_betty, a script file that log in as other user. \id of current user \
+Task 2 : 1-who_am_i, a script file that print the effective userid of
