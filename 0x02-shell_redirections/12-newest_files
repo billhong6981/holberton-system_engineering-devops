@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -lt | tr -s '  ' | cut -d' ' -f9 | head -n 10
