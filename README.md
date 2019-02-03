@@ -1,2 +1,4 @@
-# holberton-system_engineering-devops
-firs project: where am I, use command pwd to list current working directory.
+use command pwd to lis current working directory. 
+correction : to add a new line to end of the file.
+make a executable file with chmod u+x "filename"
+run the script file with prefix ./"filename".
