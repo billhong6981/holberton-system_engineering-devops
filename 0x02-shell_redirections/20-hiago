@@ -1,3 +1,3 @@
 #!/bin/bash
-tr -sd C \  |tr -sd c \ 
- 
+tr -d Cc
+
