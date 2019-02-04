@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -laR | grep '^d' -c
+find . -type d | grep '^d' -c
