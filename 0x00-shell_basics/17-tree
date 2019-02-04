@@ -1,0 +1,4 @@
+#!/bin/bash
+pwd
+mkdir -p welcome/to/holberton
+
