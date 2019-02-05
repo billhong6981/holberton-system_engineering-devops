@@ -1,3 +1,15 @@
+#holbertonschool-zero_day
+EMACS:
+
+0-opening: c-x, c-f
+1-saving: c-x, c-s
+2-cutting: step 1:select erea: c-space, arrow key to highlight erea; step2:cuting: c-w
+3-pasting: c-y
+4-searching: c-s or M-s o
+5-undoing: c-/
+6-quitting: c-g
+
+
 # holberton-system_engineering-devops
 firs project: where am I, use command pwd to list current working directory.
 
@@ -29,3 +41,4 @@ include capital letters as well.
 21-reverse--a script that reverse its input.
 22-users_and_homes--a script that displays all users and their home directories, sorted by users.
 Based on the the /etc/passwd file.
+>>>>>>> d7556dd092d82b8b6537c30dd0b522a311cc4f34
