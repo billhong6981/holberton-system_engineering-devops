@@ -13,3 +13,5 @@
 
 10-love_exponent_breath---a script that output a value of two global variable take exponent arithmetic.
 
+11-binary_to_decimal---a script that convert a binary to decimal.
+
