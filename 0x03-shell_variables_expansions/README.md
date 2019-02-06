@@ -15,3 +15,5 @@
 
 11-binary_to_decimal---a script that convert a binary to decimal.
 
+12-combinations---a script that prints all possible combinations of two letters, except oo.
+
