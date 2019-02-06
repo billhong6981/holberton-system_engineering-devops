@@ -6,3 +6,5 @@
 4-global_variables---a script that display a list of global variable, we consi.
 6-create_local_variable---a script that create a local variable.
 7-create_global_variable---a script that create a new global variable.
+
+8-true_knowledge---a script that use a global variable to output the athigorithem value.
