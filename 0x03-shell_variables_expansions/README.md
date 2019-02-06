@@ -8,3 +8,5 @@
 7-create_global_variable---a script that create a new global variable.
 
 8-true_knowledge---a script that use a global variable to output the athigorithem value.
+
+9-divide_and_rule---a script that output a value after two variables take division action.
