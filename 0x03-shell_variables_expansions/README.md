@@ -5,3 +5,4 @@
 3-paths---a script that count the directories inside the environmet variable PATH which seperated by colon : sign.
 4-global_variables---a script that display a list of global variable, we consi.
 6-create_local_variable---a script that create a local variable.
+7-create_global_variable---a script that create a new global variable.
