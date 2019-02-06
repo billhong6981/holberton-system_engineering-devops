@@ -7,6 +7,9 @@
 6-create_local_variable---a script that create a local variable.
 7-create_global_variable---a script that create a new global variable.
 
-8-true_knowledge---a script that use a global variable to output the athigorithem value.
+8-true_knowledge---a script that use a global variable to output the arithmetic value.
 
 9-divide_and_rule---a script that output a value after two variables take division action.
+
+10-love_exponent_breath---a script that output a value of two global variable take exponent arithmetic.
+
