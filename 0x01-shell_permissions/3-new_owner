@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo chown betty hello.txt
+sudo chown betty hello
