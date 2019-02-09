@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -v "C#" | sort |uniq| head -n 4| tail -n 3
+cat list | sort |uniq -u
