@@ -1,10 +1,2 @@
 #!/bin/bash
-cd /home
-pwd
-cd /tmp
-pwd
 cd -
-pwd
-
-
-
