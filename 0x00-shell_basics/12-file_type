@@ -1,3 +1,2 @@
 #!/bin/bash
 type -afpP /tmp/iamafile
-
