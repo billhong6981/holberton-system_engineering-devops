@@ -1,4 +1,2 @@
 #!/bin/bash
 rm -r /tmp/holberton
-file /tmp/holberton
-
