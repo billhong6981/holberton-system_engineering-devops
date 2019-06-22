@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#-------
+# a shell script displays text string 10 times
+#-------
+string="Holberton School"
+i=0
+while [ "$i" -ne 10 ]
+do
+	if [ "$i" -eq 3 ]
+	then
+	    echo "bad luck"
+	elif [ "$i" -eq 7 ]
+	then
+	    echo "good luck"
+	else
+	    echo "$string"
+	fi
+	i=$((i+1))
+done

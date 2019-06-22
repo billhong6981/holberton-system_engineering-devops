@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#-------
+# a shell script displays text string 10 times
+#-------
+filename="/etc/passwd"
+while read fd
+do
+    echo -n "$fd" | cut -d ":" -f 1,3,6
+done < "$filename"

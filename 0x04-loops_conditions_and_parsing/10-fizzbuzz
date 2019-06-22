@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#-------
+# a shell script displays text string 10 times
+#-------
+for i in {1..100}
+do
+    str=
+    ((i % 3 == 0)) && str="Fizz"
+    ((i % 5 == 0)) && str+="Buzz"
+    if [ -z "$str" ]
+    then
+	echo "$i"
+    else
+	echo "$str"
+    fi
+done

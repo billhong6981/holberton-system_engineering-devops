@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#-------
+# a shell script displays text string 10 times
+#-------
+awk '{print $1 " " $9}' apache-access.log

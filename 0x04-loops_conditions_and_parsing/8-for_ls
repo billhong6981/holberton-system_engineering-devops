@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#-------
+# a shell script displays text string 10 times
+#-------
+LIST="$(ls)"
+for i in $LIST
+do
+    echo "$i" | cut -d "-" -f 2
+done

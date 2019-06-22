@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#-------
+# a shell script displays text string 10 times
+#-------
+string="Holberton School"
+i=10
+while [ "$i" -ne 0 ]
+do
+	if [ "$i" -eq 2 ]
+	then
+		echo "Hi"
+	else
+		echo "$string"
+	fi
+	i=$((i-1))
+done

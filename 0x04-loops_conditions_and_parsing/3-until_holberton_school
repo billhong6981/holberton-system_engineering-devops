@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#---------
+# creates a shell script to print ten times text string
+#---------
+string="Holberton School"
+i="10"
+until [ "$i" -eq 0 ]
+do
+    echo "$string"
+    i=$((i-1))
+done
