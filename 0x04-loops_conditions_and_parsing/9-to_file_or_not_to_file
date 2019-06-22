@@ -4,18 +4,15 @@
 #-------
 file="holbertonschool"
 filename="./holbertonschool"
-if [ -e "$filename" ]
-then
+if [ -e "$filename" ]; then
     echo "$file file is exists"
-    if [ -s "$filename" ]
-    then
+    if [ -s "$filename" ]; then
 	echo "$file file is not empty"
     else
 	echo "$file file is empty"
     fi
 
-    if [ -f "$filename" ]
-    then
+    if [ -f "$filename" ]; then
 	echo "$file is a regular file"
     fi
 else
