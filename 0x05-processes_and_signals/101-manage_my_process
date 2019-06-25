@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+#-----------------------
+# manage my process
+#-----------------------
+#
+ARGS=2
+SUCCESS=0
+filename="/var/run/my_process.pid"
+file="manage_my_process"
+
+create_file()
+{
+    sudo touch $filename
+}
+
+Start()
+{
+    bash ./$file &
+    create_file
+    echo "$!" > $filename
+    echo "manage_my_process started"
+    exit $SUCCESS
+}
+
+Stop()
+{
+    kill "$(cat $filename)"
+    sudo rm "$filename"
+    echo "manage_my_process stopped"
+    exit $SUCCESS
+}
+
+Restart()
+{
+    kill "$(cat $filename)"
+    sudo rm "$filename"
+    bash ./$file &
+    create_file
+    echo "$!" > $filename
+    echo "manage_my_process restarted"
+    exit $SUCCESS
+}
+[[ $1 == "start" ]] && Start
+[[ $1 == "stop" ]] && Stop
+[[ $1 == "restart" ]] && Restart
+if [ "$#" -ne "$ARGS" ]
+then
+    echo "Usage: manage_my_process {start|stop|restart}"
+    exit 1
+fi

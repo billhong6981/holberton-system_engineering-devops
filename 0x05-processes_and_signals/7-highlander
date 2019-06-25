@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#-----------------------
+# displays this running script PID
+#-----------------------
+# ps aux | grep $0 | grep -v grep
+trap "echo 'I am invincible!!!'" SIGTERM
+while :
+do
+    echo "To infinity and beyond"
+    sleep 2
+done

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#-----------------------
+# displays this running script PID
+#-----------------------
+# ps aux | grep $0 | grep -v grep
+ps -auxH

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#-----------------------
+# displays this running script PID
+#-----------------------
+# shellcheck disable=SC2009
+arg=$(ps -aux | grep 4-to_infinity_and_beyond | grep -v grep)
+a=$(echo "$arg" | cut -d " " -f2)
+kill "$a"

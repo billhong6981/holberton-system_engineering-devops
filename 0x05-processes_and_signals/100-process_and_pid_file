@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+#-----------------------
+# displays this running script PID
+#-----------------------
+#
+SUCCESS=0
+filename="/var/run/holbertonscript.pid"
+
+create_file()
+{
+    sudo touch $filename
+    echo "$$" > $filename
+}
+
+I_QUIT()
+{
+    sudo rm $filename
+    exit $SUCCESS
+}
+
+I_TERM()
+{
+    echo "I hate the kill command"
+    sudo rm $filename
+    exit $SUCCESS
+}
+
+create_file
+trap "echo 'Y U no love me?!'" SIGINT
+trap  I_TERM SIGTERM
+trap I_QUIT SIGQUIT
+
+while :
+do
+    echo "To infinity and beyond"
+    sleep 2
+done

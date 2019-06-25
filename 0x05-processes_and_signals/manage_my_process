@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#-----------------------
+# manage my process
+#-----------------------
+#
+filename="/tmp/my_process"
+sudo touch $filename
+
+while :
+do
+    echo "I am alive!" >> $filename
+    sleep 2
+done
