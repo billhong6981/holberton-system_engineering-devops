@@ -3,4 +3,4 @@
 # displays this running script PID
 #-----------------------
 # ps aux | grep $0 | grep -v grep
-ps -auxH
+ps -auxf
