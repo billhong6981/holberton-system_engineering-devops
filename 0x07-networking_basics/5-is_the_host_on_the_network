@@ -3,10 +3,9 @@
 # the host network status 5 times
 # Usage: 5-is_the_host_on_the_network {IP_ADDRESS}
 ARGS=1
-E_BADARGS=85
 if [ $# -ne "$ARGS" ]
 then
-	echo "Usage: $(basename $0) {IP_ADDRESS}"
-	exit $E_BADARGS
+    echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
+else
+    ping -c 5 "$1"
 fi
-ping -c 5 $1
