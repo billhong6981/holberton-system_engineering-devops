@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# runing the docker container
+# in the container start the apache web server service
+# mapping the port 80 to 8080
+sudo docker run -p 8080:80 -d -it holbertonschool/265-0
+id=$(sudo docker ps | awk '{print $1}' | tail -n 1)
+sudo docker exec -ti "$id" /bin/bash
+service apache2 start
+exit
+curl 0:8080
