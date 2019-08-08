@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # a script installs Nginx web server
-sudo apt-get update
-sudo apt-get -y install nginx
-sudo ufw allow 'Nginx HTTP'
-sudo echo "Holberton School" > /var/www/html/index.html
-sudo service nginx start
+apt-get update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
+echo "Holberton School" > /var/www/html/index.html
+service nginx start
