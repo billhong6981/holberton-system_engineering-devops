@@ -3,7 +3,6 @@
 # adds X-Served-By: $hostname to HTTP Header
 apt-get update
 apt-get -y install nginx
-ufw allow 'Nginx HTTP'
 echo "Holberton School" > /var/www/html/index.html
 echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
 sed -i "/listen 80 default_server;/a\add_header X-Served-By \"$hostname\";" /etc/nginx/sites-available/default
