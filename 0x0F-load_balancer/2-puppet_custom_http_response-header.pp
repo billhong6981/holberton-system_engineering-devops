@@ -1,6 +1,6 @@
 # Automated by Puppet manifest to install web server nginx
 # and reconfiguration
-host_name = "add_header X-Served-By ${hostname};"
+$host_name = "add_header X-Served-By ${hostname};"
 exec { 'update':
   command => '/usr/bin/apt-get update',
 }
