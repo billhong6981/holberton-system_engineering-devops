@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 # a script installs Nginx web server and set redirected to other page
 # adds X-Served-By: $hostname to HTTP Header
-sed -i "s/127.0.0.1\s*localhost/127.0.0.1 localhost 748-web-01 748-web-01/" /etc/hosts
 apt-get update
 apt-get -y install nginx
 echo "Holberton School" > /var/www/html/index.html
 echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
-sed -i "/listen 80 default_server;/a\add_header X-Served-By \"$hostname\";" /etc/nginx/sites-available/default
+sed -i "/listen 80 default_server;/a\add_header X-Served-By \"$(hostname)\";" /etc/nginx/sites-available/default
 sed -i "/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default
 sed -i "/listen 80 default_server;/a\error_page 404 /custom_404.html; location = /custom_404.html {root /usr/share/nginx/html; internal;}" /etc/nginx/sites-available/default
 service nginx restart
