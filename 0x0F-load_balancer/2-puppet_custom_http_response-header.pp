@@ -1,5 +1,6 @@
 # Automated by Puppet manifest to install web server nginx
 # and reconfiguration
+host_name = "add_header X-Served-By ${hostname};"
 exec { 'update':
   command => '/usr/bin/apt-get update',
 }
@@ -17,7 +18,7 @@ exec { 'update':
   ensure => 'present',
   path   => '/etc/nginx/sites-available/default',
   after  => 'listen 80 default_server;',
-  line   => 'add_header X-Served-By ${hostname};',
+  line   => $host_name,
 }
 -> file { '/var/www/html/index.html':
   content => 'Holberton School',
