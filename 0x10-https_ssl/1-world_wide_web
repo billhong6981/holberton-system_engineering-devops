@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# prints the informations about the subdomain
+
+print_sub ()
+{
+	dig "$2.$1" | grep -A1 'ANSWER SECTION' | tail -n 1 | awk -v var="$2" '{print "The subdomain " var " is a " $4 " record and points to", $5}'
+}
+
+SUB1="www"
+SUB2="lb-01"
+SUB3="web-01"
+SUB4="web-02"
+
+if [ -z "$2" ]
+then
+	print_sub "$1" "$SUB1"
+   	print_sub "$1" "$SUB2"
+   	print_sub "$1" "$SUB3"
+   	print_sub "$1" "$SUB4"
+else
+	print_sub "$1" "$2"
+fi
