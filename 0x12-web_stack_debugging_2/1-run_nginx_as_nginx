@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# the script stops apache2 and starts nginx as web service under user nginx
+pkill apache2
+echo "user nginx;worker_processes 4;events {worker_connections 1024;} http {server {listen 8080;}}" > /tmp/ng.conf
+chown nginx /tmp/ng.conf
+sudo -u nginx bash -c "nginx -c /tmp/ng.conf"
