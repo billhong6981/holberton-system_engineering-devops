@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# dump my database
+mysqldump -u root -p"$1" --opt tyrell_corp > backup.sql
+tar -zcvf "$(date '+%d-%m-%Y')".tar.gz backup.sql
