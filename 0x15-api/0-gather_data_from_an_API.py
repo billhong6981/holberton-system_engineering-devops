@@ -5,7 +5,7 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    if argv[1] is None:
+    if argv[1] is None or type(int(argv[1])) is not int:
         exit()
     url = "https://jsonplaceholder.typicode.com"
     try:
@@ -18,17 +18,17 @@ if __name__ == "__main__":
         things = res_todo.json()
     except:
         exit()
-    EMPLOYEE_NAME = user.get("name")
+    EMPLOYEE_NAME = user.get("name", None)
     NUMBER_OF_DONE_TASKS = 0
     TOTAL_NUMBER_OF_TASKS = 0
     TASK_TITLE = []
 
     for thing in things:
-        if thing["userId"] == int(argv[1]):
+        if thing.get("userId", None) == int(argv[1]):
             TOTAL_NUMBER_OF_TASKS += 1
-            if thing["completed"] is True:
+            if thing.get("completed", None) is True:
                 NUMBER_OF_DONE_TASKS += 1
-                TASK_TITLE.append(thing["title"])
+                TASK_TITLE.append(thing.get("title", None))
     print("Employee {} is done with tasks({}/{}):"
           .format(EMPLOYEE_NAME, NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS))
     for task in TASK_TITLE:

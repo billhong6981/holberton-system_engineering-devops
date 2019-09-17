@@ -7,7 +7,7 @@ import json
 
 
 if __name__ == "__main__":
-    if argv[1] is None:
+    if argv[1] is None or type(int(argv[1])) is not int:
         exit()
     filename = argv[1] + ".csv"
     url = "https://jsonplaceholder.typicode.com"
@@ -21,17 +21,19 @@ if __name__ == "__main__":
         things = res_todo.json()
     except:
         exit()
-    EMPLOYEE_NAME = user.get("username")
+    EMPLOYEE_NAME = user.get("username", None)
 
     with open(filename, "w") as f:
-        csv_fields = ["USER_ID","USERNAME","TASK_COMPLETED_STATUS","TASK_TITLE"]
+        csv_fields = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS",
+                      "TASK_TITLE"]
         writer = csv.DictWriter(f, fieldnames=csv_fields)
         writer.writeheader()
         for thing in things:
             row_dict = {}
-            if thing["userId"] == int(argv[1]):
-                row_dict["USER_ID"] = thing["userId"]
+            if thing.get("userId", None) == int(argv[1]):
+                row_dict["USER_ID"] = thing.get("userId", None)
                 row_dict["USERNAME"] = EMPLOYEE_NAME
-                row_dict["TASK_COMPLETED_STATUS"] = thing["completed"]
-                row_dict["TASK_TITLE"] = thing["title"]
+                row_dict["TASK_COMPLETED_STATUS"] = thing.get("completed")
+                row_dict["TASK_TITLE"] = thing.get("title", None)
+                json.dumps(row_dict)
                 writer.writerow(row_dict)

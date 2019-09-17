@@ -25,10 +25,10 @@ if __name__ == "__main__":
             json_list = []
             for thing in things:
                 row_dict = {}
-                if thing["userId"] == u_id["id"]:
-                    row_dict["username"] = u_id["username"]
-                    row_dict["task"] = thing["title"]
-                    row_dict["completed"] = thing["completed"]
+                if thing.get("userId") == u_id.get("id"):
+                    row_dict["username"] = u_id.get("username")
+                    row_dict["task"] = thing.get("title")
+                    row_dict["completed"] = thing.get("completed")
                     json_list.append(row_dict)
             row[u_id["id"]] = json_list
         json.dumps(row)

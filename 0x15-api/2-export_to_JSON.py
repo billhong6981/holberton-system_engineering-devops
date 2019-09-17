@@ -7,7 +7,7 @@ import json
 
 
 if __name__ == "__main__":
-    if argv[1] is None:
+    if argv[1] is None or type(int(argv[1])) is not int:
         exit()
     filename = argv[1] + ".json"
     url = "https://jsonplaceholder.typicode.com"
@@ -21,16 +21,15 @@ if __name__ == "__main__":
         things = res_todo.json()
     except:
         exit()
-    EMPLOYEE_NAME = user.get("name")
     row = {}
     with open(filename, "w") as f:
         json_list = []
         for thing in things:
             row_dict = {}
-            if thing["userId"] == int(argv[1]):
-                row_dict["task"] = thing["title"]
-                row_dict["completed"] = thing["completed"]
-                row_dict["username"] = user["username"]
+            if thing.get("userId", None) == int(argv[1]):
+                row_dict["task"] = thing.get("title", None)
+                row_dict["completed"] = thing.get("completed", None)
+                row_dict["username"] = user.get("username", None)
                 json_list.append(row_dict)
         row[str(argv[1])] = json_list
         json.dumps(row)
