@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """a module that request data via REST API service"""
-import requests
 from sys import argv
+import requests
 
 
 if __name__ == "__main__":
